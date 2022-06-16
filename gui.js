@@ -137,21 +137,22 @@ function getPerson(person_id) {
 		outputElm.innerHTML = "";
 		outputElm.innerHTML = renderPersonData(results[0].values[0], results[1].values)
 	}
-	const sql = `SELECT 
-	name, 
-	born, 
-	died
+	const sql = `
+	SELECT 
+	  name, 
+	  born, 
+	  died
 	FROM persons 
 	WHERE person_id = "${person_id}"; 
 	
 	SELECT 
-	movies.title_id, 
-	primary_title AS Title,
-	category AS Role, 
-	premiered AS Year 
+	  movies.title_id, 
+	  primary_title AS Title,
+	  category AS Role, 
+	  premiered AS Year 
 	FROM movies, staff
 	WHERE staff.person_id = "${person_id}"
-	AND movies.title_id = staff.title_id 
+	  AND movies.title_id = staff.title_id 
 	ORDER BY premiered DESC 
 	`
 	console.log(sql)
@@ -434,7 +435,7 @@ function getMovie(title_id) {
 	  characters AS Character 
 	FROM staff, persons 
 	WHERE title_id="${title_id}" 
-	  AND category IN ("actor", "actress") 
+	  AND category IN ("actor", "actress", "self") 
 	  AND staff.person_id = persons.person_id; 
 	
 	SELECT
@@ -444,7 +445,7 @@ function getMovie(title_id) {
 	  job AS Notes 
 	FROM staff, persons 
 	WHERE title_id="${title_id}" 
-	  AND category NOT IN ("actor", "actress") 
+	  AND category NOT IN ("actor", "actress", "self") 
 	  AND staff.person_id = persons.person_id
 	`
 	console.log(sql)
