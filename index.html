@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf8">
+  <title>Movie Database Browser</title>
+  <link href='https://fonts.googleapis.com/css?family=Luckiest Guy' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Rosario' rel='stylesheet'>
+  <link rel="stylesheet" href="demo.css">
+
+</head>
+
+<body>
+
+  <h1>📽  &nbsp;&nbsp;&nbsp; Movie Database Browser &nbsp;&nbsp;&nbsp; <a href="javascript:toggleEditor()" style="text-decoration:none;">⚙️</a></h1>
+
+    <div id="sqleditor" style="display:none;">
+      <label for='commands'>Enter SQL</label>
+      <br>
+      <textarea id="commands"></textarea>
+  
+      <button id="execute" class="button">Execute</button>
+      <br/>
+  
+    </div>
+    <div id="searchbox">
+      <p>
+        Standard reports<br/>
+        <a href="javascript:getTopMovies()">Top 100</a>
+        <a href="javascript:getDiligentActors()">Actors</a>
+        <a href="javascript:getDiligentProducers()">Producers</a>
+        <a href="javascript:getDiligentDirectors()">Directors</a>
+        <a href="javascript:getDiligentComposers()">Composers</a>
+        <a href="javascript:getRatingsDistribution()">Ratings</a>
+        <a href="javascript:getReleaseDistribution()">Releases</a>
+  
+      </p>
+      <label for='search'>Search movie title</label>
+      <br>
+      <input id="search"></input>
+    </div>
+    
+    <div id="error" class="error"></div>
+    <div id="output">Results will be displayed here</div>
+
+    <div>
+      <canvas id="chart"></canvas>
+    </div>
+     
+  <script src="lib/sqljs/sql-wasm.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <footer>
+    Information courtesy of IMDb (https://www.imdb.com). Used with permission.
+  </footer>
+
+  <script type="text/javascript" src="gui.js"></script>
+</body>
+
+</html>

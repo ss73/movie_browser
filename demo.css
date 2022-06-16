@@ -1,0 +1,127 @@
+html {
+	background:#222;
+	margin:auto;
+	width:80%;
+}
+
+body{
+	font-family: 'Rosario';
+	color: #eee;
+	background: linear-gradient(#001 0, #013 10px, #035 55px);
+	border: 0px solid black;
+	padding: 10px 20px;
+	box-shadow: 5px 0px 30px #000;
+	border-radius: 8px;
+}
+
+/* unvisited link */
+a:link {
+	color: #ccc;
+}
+/* visited link */
+a:visited {
+	color: #095484;
+}
+/* mouse over link */
+a:hover {
+	color: #8ebf42;
+}
+/* selected link */
+a:active {
+	color: #800000;
+}
+
+h1 {
+	font-family: 'Luckiest Guy';
+	font-size: 32px;
+	text-align: center;
+	color: #fff;
+	margin: 0 0 30px;
+}
+
+input {
+	width: 95%;
+	height: 30px;
+	border-radius: 25px;
+	border: 0px;
+}
+
+textarea {
+	width: 95%;
+	border-radius: 5px;
+	height: 60px
+}
+
+input:focus,textarea:focus{
+	outline: none;
+}
+
+.button {
+	color: #333;
+	background: linear-gradient(#eee, #ddd);
+	border: 0px solid #222;
+	border-radius: 23px;
+	padding: 7px;
+	margin-right: 5px;
+	transition: .3s;
+	font-family: ubuntu, sans-serif;
+	font-size: 1em;
+}
+
+.button:active {
+	background: linear-gradient(#ddd, #eee);
+}
+
+.button:hover, button:focus {
+	box-shadow: 0 0 2px #222;
+}
+
+#execute {
+	margin-top: 5px;;
+	width: 10%;
+	min-width:100px;
+}
+
+.CodeMirror {
+	border: 1px solid #222;
+	height: auto;
+}
+.CodeMirror-scroll {
+	overflow-y: hidden;
+	overflow-x: auto;
+}
+
+.error {
+	color:red;
+	transition:.5s;
+	overflow:hidden;
+	margin: 15px;
+}
+
+#output {
+	overflow: auto;
+}
+
+table {
+	width:99%;
+	margin:3px;
+	border:none;
+	border-collapse:collapse;
+	margin-bottom:10px;
+}
+
+th {
+	border:0px solid #777;
+	text-align: left;
+	font-weight: bold;
+	font-size: larger;
+}
+td {
+	border:0px solid #777;
+	text-align: left;
+}
+
+footer {
+	font-size:.8em;
+	color: #222;
+}

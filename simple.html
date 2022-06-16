@@ -1,0 +1,36 @@
+<meta charset="utf8" />
+<html>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.7.0/sql-wasm.min.js"> </script>
+  <script>
+    config = {
+      // locateFile function is needed unless wasm file in the same folder.
+      locateFile: filename => "https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.7.0/sql-wasm.wasm"
+    }
+    initSqlJs(config).then(function(SQL){
+      //Create the database
+      const db = new SQL.Database();
+      // Run a query without reading the results
+      db.run("CREATE TABLE fruit (name, color, grams);");
+      db.run("INSERT INTO fruit VALUES (?,?,?)", ["Apple","red","80"]);
+      db.run("INSERT INTO fruit VALUES (?,?,?)", ["Apple","green","100"]);
+      db.run("INSERT INTO fruit VALUES (?,?,?)", ["Lemon","yellow","60"]);
+      db.run("INSERT INTO fruit VALUES (?,?,?)", ["Water melon","green","900"]);
+      db.run("INSERT INTO fruit VALUES (?,?,?)", ["Banana","yellow","140"]);
+
+      const stmt = db.prepare("SELECT * FROM fruit WHERE color = $color");
+      stmt.getAsObject({$color:""}); 
+
+      // Bind new values
+      stmt.bind({$color:"yellow"});
+      while(stmt.step()) { 
+        const row = stmt.getAsObject();
+        console.log('Row: ' + JSON.stringify(row));
+      }
+    });
+  </script>
+  <body>
+    <pre>Open Javascript console to view output</pre>
+  </body>
+</html>
+
+
