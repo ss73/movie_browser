@@ -2,17 +2,18 @@
 
 The Movie Database Browser is a demonstration application to show how SQLite compiled into wasm can be a way of getting high performance and data visualization flexibility in a web application.
 
-## Running the application
-To run the application locally, you will need to serve the application directory by a web server. There are multiple approaches to doing this and one option is to use the ```http-server``` tool. 
+You can access the application directly [here](https://ss73.github.io/movie_browser/). Once the page is loaded, all database access is performed purely in the frontend and no further network requests are made.
 
-From a terminal window, cd to the application directory and run:
+## Running the application locally
+To run the application locally, you will need to serve the application directory by a web server. There are multiple approaches to doing this and one option is to use the popular [```http-server```](https://www.npmjs.com/package/http-server) tool. 
+
+Assuming http-server is installed, open a terminal window, cd to the application directory and run:
 ```
 http-server
 ```
 Next, open a web browser and point it to http://localhost:8080
 
 If you wish stop the server, press ```Ctrl-C```
-
 
 ## Setup a new IMDB database
 
