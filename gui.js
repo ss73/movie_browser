@@ -206,7 +206,7 @@ function renderPersonData(basic_data, movie_data) {
 	const basic_html = `
 	<h2>${basic_data[0]}</h2>
   	<ul>
-	  <li><b>Born:</b> ${basic_data[1]}</li>
+	  <li><b>Born:</b> ${basic_data[1]?basic_data[1]:'-'}</li>
 	  <li><b>Died:</b> ${basic_data[2]?basic_data[2]:'-'}</li>
 	</ul>
 	<h2>Titles</h2>
