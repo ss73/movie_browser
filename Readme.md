@@ -18,7 +18,7 @@ If you wish stop the server, press ```Ctrl-C```
 ## Setup a new IMDB database
 
 In order to build a new database, a python tool
-```imdb-sqlite``` is utilized. It will import IMDB TSV files into a SQLite database.
+[```imdb-sqlite```](https://github.com/jojje/imdb-sqlite) is utilized. It will import IMDB TSV files into a SQLite database.
 
 It will fetch the files from IMDB unless you've already fetched them earlier.
 
